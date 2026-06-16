@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+/* Base variables */
+:root {
+    --bg-color: #f9fafb;
+    --card-color: #ffffff;
+    --text-color: #111827;
+    --text-secondary: #6b7280;
+    --border-color: #e5e7eb;
+}
+
+/* Dark theme */
+.dark {
+    --bg-color: #030712;
+    --card-color: #111827;
+    --text-color: #f9fafb;
+    --text-secondary: #9ca3af;
+    --border-color: #1f2937;
+}
+
+/* Cyberpunk theme */
+.cyberpunk {
+    --bg-color: #0a0a2a;
+    --card-color: #1a1a4a;
+    --text-color: #06b6d4;
+    --text-secondary: #c084fc;
+    --border-color: #06b6d4;
+}
+
+/* Apply variables */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Card styles */
+.card {
+    background-color: var(--card-color);
+    border-color: var(--border-color);
+}
+
+/* Text colors */
+.text-primary {
+    color: var(--text-color);
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+/* Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-fadeIn {
+    animation: fade-in 0.5s ease forwards;
+    opacity: 0;
+}
+
+.animate-spin-slow {
+    animation: spin 1s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #4b5563;
+}
+
+.cyberpunk ::-webkit-scrollbar-track {
+    background: #1a1a4a;
+}
+
+.cyberpunk ::-webkit-scrollbar-thumb {
+    background: #06b6d4;
+}
+
+/* Cyberpunk glow effect */
+.cyberpunk .glow {
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+}
+
+.cyberpunk .neon-text {
+    text-shadow: 0 0 5px #06b6d4, 0 0 10px #06b6d4;
+}
